@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+        <com.tencent.smtt.sdk.WebView
+            android:id="@+id/webView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white">
+                <ImageView
+                    android:id="@+id/img_float"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/location"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="500dp"
+                    android:foregroundGravity="left|center_vertical"/>
+        </com.tencent.smtt.sdk.WebView>
+        <ImageView
+            android:id="@+id/errorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:src="@drawable/error"/>
+        <Button
+            android:id="@+id/refreshButton"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:textSize="20dp"
+            android:text="刷             新"
+            android:background="#b8c1e0"
+            android:textColor="#f324282c"/>
+
+
+
+</LinearLayout>

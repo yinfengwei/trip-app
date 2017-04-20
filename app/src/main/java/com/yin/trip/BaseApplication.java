@@ -1,6 +1,7 @@
 package com.yin.trip;
 
 import android.app.Application;
+import android.app.ProgressDialog;
 import android.util.Log;
 
 import com.tencent.smtt.sdk.QbSdk;
@@ -14,6 +15,7 @@ public class BaseApplication extends Application {
 
     private static BaseApplication instance;
 
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -21,6 +23,7 @@ public class BaseApplication extends Application {
         instance = this;
         initTbs();
     }
+
 
     private void initTbs() {
         //搜集本地tbs内核信息并上报服务器，由服务器返回结果决定使用哪个内核。
