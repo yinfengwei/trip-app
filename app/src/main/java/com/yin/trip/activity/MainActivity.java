@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity{
     private ProgressDialog progressDialog;
 
     //开发环境
-    private String url = "http://192.168.191.1:8080/trip-admin/login";
+//    private String url = "http://192.168.191.1:8080/trip-admin/login";
 
     private Button button;
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity{
     private ImageView location_view;
 
     //正式环境
-//    private String url = "http://119.29.70.147:8111/trip-admin/login";
+    private String url = "http://119.29.70.147:8111/trip-admin/login";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,9 +119,14 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public boolean shouldOverrideUrlLoading(WebView webView, String s) {
 
-
-                webView.loadUrl(s);
-                return true;
+                //判断是否为该工程的链接
+                String baseUrl = "http://119.29.70.147:8111/trip-admin";
+                if (s.contains(baseUrl)) {
+                    webView.loadUrl(s);
+                    return true;
+                }else {
+                    return false;
+                }
             }
 
             @Override
